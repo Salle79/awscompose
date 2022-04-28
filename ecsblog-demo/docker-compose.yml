@@ -1,0 +1,16 @@
+services:
+  frontend:
+    image: salle79/starter-frontend:latest
+    build: frontend
+    ports:
+      - 80:80
+    depends_on:
+      - backend
+    volumes:
+      - mydata:/data
+  backend:
+    image: salle79/starter-backend:latest
+    build: backend
+
+volumes:
+  mydata:
